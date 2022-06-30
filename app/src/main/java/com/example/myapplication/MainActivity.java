@@ -1,12 +1,16 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,50 +19,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.maintab);
+        /**
+         * ViewPager : 탭 슬라이더
+         * VPAdapter : Adapter between ViewPager <-> TabLayout
+         */
+        ViewPager vp = findViewById(R.id.viewpager);
+        VPAdapter adapter = new VPAdapter(getSupportFragmentManager());
+        vp.setAdapter(adapter);
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        /**
+         * TabLayout : 탭
+         */
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.maintab);
+        tabLayout.setupWithViewPager(vp);
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                int pos = tab.getPosition();
-                changeView(pos);
+                vp.setCurrentItem(tab.getPosition());
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-                // TODO : tab의 상태가 선택되지 않음으로 변경.
+
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                // TODO : 이미 선택된 tab이 다시
+
             }
         });
 
     }
 
-    private void changeView(int index) {
-        TextView textView1 = (TextView) findViewById(R.id.text1) ;
-        TextView textView2 = (TextView) findViewById(R.id.text2) ;
-        TextView textView3 = (TextView) findViewById(R.id.text3) ;
-
-        switch (index) {
-            case 0 :
-                textView1.setVisibility(View.VISIBLE) ;
-                textView2.setVisibility(View.INVISIBLE) ;
-                textView3.setVisibility(View.INVISIBLE) ;
-                break ;
-            case 1 :
-                textView1.setVisibility(View.INVISIBLE) ;
-                textView2.setVisibility(View.VISIBLE) ;
-                textView3.setVisibility(View.INVISIBLE) ;
-                break ;
-            case 2 :
-                textView1.setVisibility(View.INVISIBLE) ;
-                textView2.setVisibility(View.INVISIBLE) ;
-                textView3.setVisibility(View.VISIBLE) ;
-                break ;
-
-        }
-    }
 }
