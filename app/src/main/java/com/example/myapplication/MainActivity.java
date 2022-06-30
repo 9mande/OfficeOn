@@ -3,8 +3,10 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -51,6 +53,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        /**
+         * 버튼
+         */
+        ImageButton btn1 = findViewById(R.id.url_button);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Sharing_intent = new Intent(Intent.ACTION_SEND);
+                Sharing_intent.setType("text/plain");
+
+                String Test_Message = "공유할 Text";
+
+                Sharing_intent.putExtra(Intent.EXTRA_TEXT, Test_Message);
+
+                Intent Sharing = Intent.createChooser(Sharing_intent, "공유하기");
+                startActivity(Sharing);
+            }
+        });
     }
 
 }
