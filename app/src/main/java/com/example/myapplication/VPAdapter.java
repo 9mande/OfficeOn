@@ -20,7 +20,7 @@ public class VPAdapter extends FragmentPagerAdapter {
     public VPAdapter(FragmentManager fm) {
         super(fm);
         items = new ArrayList<Fragment>();
-        items.add(new fragment_item());
+        items.add(new fragment_phonebook());
         items.add(new fragment_gallery());
         items.add(new fragment_3());
 

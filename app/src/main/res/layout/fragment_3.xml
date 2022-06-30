@@ -6,9 +6,13 @@
     tools:context=".fragment_3">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+
+
+    <ImageView
+        android:id="@+id/myIm"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:contentDescription="myimage"
+        android:src="@drawable/face" />
 
 </FrameLayout>
