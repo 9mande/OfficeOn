@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#555555"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment_phonebook" >
-
+    tools:context=".fragment_phonebook"
     android:background="#5B5454"
     android:orientation="vertical"
     android:padding="16dp">

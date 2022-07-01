@@ -52,7 +52,7 @@ public class fragment_phonebook extends Fragment {
     private RecyclerView recyclerView;
     private RVAdapter_phonebook rvAdapter;
     private final int REQUEST_CONTACT = 10;
-    public List<PhoneNumberVO> lstContact;
+    public List<PhoneNumberVO> lstPhonebook = new ArrayList<PhoneNumberVO>();
     public Object PhoneNumberVO;
 
     Dialog mDialog;
@@ -92,7 +92,7 @@ public class fragment_phonebook extends Fragment {
 
         recyclerView = rootView.findViewById(R.id.contact_recyclerview);
         recyclerView.addItemDecoration(new DividerItemDecoration(rootView.getContext(), 1));
-        rvAdapter = new RVAdapter_phonebook(getContext(), lstContact);
+        rvAdapter = new RVAdapter_phonebook(getContext(), lstPhonebook);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(rvAdapter);
 
@@ -150,7 +150,7 @@ public class fragment_phonebook extends Fragment {
                         String phone = phoneT.getText().toString();
 
                         PhoneNumberVO phoneNumberVO = new PhoneNumberVO(name, phone);
-                        lstContact.add(phoneNumberVO);
+                        lstPhonebook.add(phoneNumberVO);
                         rvAdapter.notifyDataSetChanged();
                         mDialog.dismiss();
                     }
@@ -182,7 +182,7 @@ public class fragment_phonebook extends Fragment {
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
             final int position = viewHolder.getAdapterPosition();
-            lstContact.remove(position);
+            lstPhonebook.remove(position);
             rvAdapter.notifyItemRemoved(position);
         }
     };
@@ -201,7 +201,8 @@ public class fragment_phonebook extends Fragment {
             cursor.close();
 
             PhoneNumberVO phoneNumberVO = new PhoneNumberVO(name, phone);
-            lstContact.add(phoneNumberVO);
+            lstPhonebook.add(phoneNumberVO);
+
             rvAdapter.notifyDataSetChanged();
         } else {
             Toast.makeText(getContext(), "Fail", Toast.LENGTH_SHORT).show();

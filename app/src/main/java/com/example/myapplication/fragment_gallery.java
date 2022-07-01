@@ -150,7 +150,7 @@ public class fragment_gallery extends Fragment {
                         filePath.createNewFile();
                     }
 
-                    Uri photoUri = FileProvider.getUriForFile(rootView.getContext(), "com.example.taptest.provider", filePath);
+                    Uri photoUri = FileProvider.getUriForFile(rootView.getContext(), "com.example.myapplication.provider", filePath);
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
                     startActivityForResult(intent, CAMERA_REQUEST_CODE);
