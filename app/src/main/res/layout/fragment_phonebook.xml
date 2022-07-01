@@ -163,16 +163,6 @@
 
                 app:layout_constraintTop_toBottomOf="@id/myImage"/>
 
-            <ImageView
-                android:id="@+id/myImm"
-                android:contentDescription="myimageeee"
-                android:layout_width="match_parent"
-                android:layout_height="1000dp"
-                android:src="@drawable/face"
-                android:layout_marginRight="5dp"
-
-                app:layout_constraintTop_toBottomOf="@id/myImage" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
