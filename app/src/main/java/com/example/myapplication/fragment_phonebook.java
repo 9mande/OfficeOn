@@ -112,7 +112,7 @@ public class fragment_phonebook extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+                rvAdapter.getFilter().filter(charSequence.toString());
             }
 
             @Override
