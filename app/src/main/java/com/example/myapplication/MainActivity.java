@@ -21,7 +21,11 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    int nCurrentPermission = 0;
+    static final int PERMISSIONS_REQUEST = 0x0000001;
 
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
     RVAdapter adapter;
 
     @Override
