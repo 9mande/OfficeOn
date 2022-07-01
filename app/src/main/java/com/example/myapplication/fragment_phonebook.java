@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -37,6 +38,7 @@ import java.util.List;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import com.google.gson.Gson;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -72,15 +74,6 @@ public class fragment_phonebook extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Nullable
@@ -173,6 +166,39 @@ public class fragment_phonebook extends Fragment {
         return rootView;
 
     }
+
+    Gson gson = new Gson();
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        lstPhonebook = new ArrayList<>();
+
+        try {
+            InputStream is = getContext().getAssets().open("phoneNumbers.json");
+            //AssetManager am = getResources().getAssets();
+            //InputStream is = am.open("phoneNumbers.json");
+            byte[] buffer = new byte[is.available()];
+            is.read(buffer);
+            is.close();
+            String json = new String(buffer, "UTF-8");
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray jsonArray = jsonObject.getJSONArray("person");
+            int index = 0;
+            while (index < jsonArray.length()) {
+                Object a = jsonArray.get(index);
+                String b = a.toString();
+
+                PhoneNumberVO phoneNumberVO = gson.fromJson(b, PhoneNumberVO.class);
+                lstPhonebook.add(phoneNumberVO);
+                index++;
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {

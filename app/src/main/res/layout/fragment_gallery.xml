@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:background="#F5F5F5"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment_gallery">
 
@@ -21,8 +24,7 @@
         android:gravity="center"
         android:numColumns="1"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp"
-        />
+        android:verticalSpacing="10dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/goToCam"
@@ -33,6 +35,9 @@
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="13dp"
         android:clickable="true"
+        android:backgroundTint="#ffffff"
+        app:borderWidth="0dp"
+        app:rippleColor="#5B5454"
         app:srcCompat="@drawable/camera" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -44,6 +49,9 @@
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="90dp"
         android:clickable="true"
+        android:backgroundTint="#ffffff"
+        app:borderWidth="0dp"
+        app:rippleColor="#5B5454"
         app:srcCompat="@drawable/album" />
 
 </RelativeLayout>

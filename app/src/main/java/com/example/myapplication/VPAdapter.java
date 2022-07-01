@@ -25,7 +25,7 @@ public class VPAdapter extends FragmentPagerAdapter {
         items.add(new fragment_3());
 
         itext.add("연락처");
-        itext.add("갤러리");
+        itext.add("명함");
         itext.add("TODO");
     }
 

@@ -6,22 +6,31 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment_phonebook"
-    android:background="#5B5454"
+    android:background="#F5F5F5"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp">
 
     <LinearLayout
+
         android:id="@+id/linear"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="56dp"
         android:orientation="horizontal"
-        android:layout_alignParentTop="@+id/contact_recyclerview">
+        android:layout_alignParentTop="@+id/contact_recyclerview"
+        android:background="#F5F5F5"
+        android:translationZ="90dp"
+        android:outlineProvider="none" >
 
         <ImageView
             android:id="@+id/imageSearch"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            app:tint="#787878"
             app:srcCompat="@android:drawable/ic_menu_search" />
 
         <EditText
@@ -32,8 +41,11 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="Search Phonebook"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"/>
+            android:textColorHint="#787878"
+            android:textColor="#5B5454"
+            android:backgroundTint = "#787878"
+
+            />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -51,11 +63,13 @@
         android:layout_alignBottom="@+id/contact_recyclerview"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
-        android:backgroundTint="@color/teal_200"
+
+        android:backgroundTint="#ffffff"
         android:clickable="true"
         android:contentDescription="@string/app_name"
         android:focusable="true"
-        app:rippleColor="@android:color/white"
+        app:borderWidth="0dp"
+        app:rippleColor="#5B5454"
         app:srcCompat="@drawable/ic_add_person_wh" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -66,14 +80,13 @@
         android:layout_alignBottom="@+id/contact_recyclerview"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="70dp"
-        android:backgroundTint="@color/teal_200"
+        android:backgroundTint="#ffffff"
         android:clickable="true"
         android:contentDescription="@string/app_name"
         android:focusable="true"
-        app:rippleColor="@android:color/white"
+        app:borderWidth="0dp"
+        app:rippleColor="#5B5454"
         app:srcCompat="@drawable/ic_baseline_book_24" />
-
-
 
 
 </RelativeLayout>
