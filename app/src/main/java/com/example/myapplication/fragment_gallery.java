@@ -134,7 +134,7 @@ public class fragment_gallery extends Fragment {
         gridView.setAdapter(adapter);
 
 
-        FloatingActionButton fab = rootView.findViewById(R.id.goToCam);
+        FloatingActionButton fab = rootView.findViewById(R.id.goToCam);                             // 카메라
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -163,7 +163,7 @@ public class fragment_gallery extends Fragment {
             }
         });
 
-        FloatingActionButton gal = rootView.findViewById(R.id.goToGallery);
+        FloatingActionButton gal = rootView.findViewById(R.id.goToGallery);                         // 갤러리
         gal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

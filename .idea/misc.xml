@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2145" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/drawable-v24/round_button.xml" value="0.19576719576719576" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/album.xml" value="0.1305" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/camera.xml" value="0.1305" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_add_person_wh.xml" value="0.1595" />
@@ -13,10 +14,11 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.263" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_main_background.xml" value="0.367" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_msg.xml" value="0.1595" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.6951596292481977" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/add_phonebook.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_share.xml" value="0.156" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/add_phonebook.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/content_grid_item.xml" value="0.18229166666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/dialog_phonebook.xml" value="0.10891590678824721" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/dialog_phonebook.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/dialog_photo.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_3.xml" value="0.12273550724637682" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_gallery.xml" value="0.18" />
@@ -26,10 +28,12 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_phonebook.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_scrolltest.xml" value="0.17291666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/gallery_item.xml" value="0.30833333333333335" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_phonebook.xml" value="0.67" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_phonebook.xml" value="0.5" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/recycler_photo.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/recycler_view_item.xml" value="0.1875" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/remove_photo.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/round_button.xml" value="0.1736842105263158" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/xml/filepaths.xml" value="0.1" />
       </map>
     </option>

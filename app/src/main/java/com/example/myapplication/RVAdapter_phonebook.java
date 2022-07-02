@@ -1,13 +1,18 @@
 package com.example.myapplication;
 
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,8 +27,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +41,7 @@ public class RVAdapter_phonebook extends RecyclerView.Adapter<RVAdapter_phoneboo
     List<PhoneNumberVO> mData; // filteredList
     List<PhoneNumberVO> unFilData; // unfilteredlist
     Dialog mDialog;
-
+    private final int GALLERY_REQUEST_CODE = 50;
 
 
     public RVAdapter_phonebook(Context mContext, List<PhoneNumberVO> mData) {
@@ -64,11 +71,22 @@ public class RVAdapter_phonebook extends RecyclerView.Adapter<RVAdapter_phoneboo
 
                 TextView dialog_name_tv = mDialog.findViewById(R.id.dialog_name);
                 TextView dialog_phone_tv = mDialog.findViewById(R.id.dialog_phone);
-                ImageView dialog_contact_img = mDialog.findViewById(R.id.dialog_img);
+                ImageView dialog_img = mDialog.findViewById(R.id.dialog_img);
                 dialog_name_tv.setText(mData.get(vHolder.getAdapterPosition()).getName());
                 dialog_phone_tv.setText(mData.get(vHolder.getAdapterPosition()).getPhone());
 
                 mDialog.show();
+
+                dialog_img.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+
+                        Activity activity = (Activity) mContext;
+                        activity.startActivityForResult(intent, GALLERY_REQUEST_CODE);
+                    }
+
+                });
 
                 Button call_btn = (Button) mDialog.findViewById(R.id.dialog_btn_call);
                 Button msg_btn = (Button) mDialog.findViewById(R.id.dialog_btn_message);
@@ -136,6 +154,8 @@ public class RVAdapter_phonebook extends RecyclerView.Adapter<RVAdapter_phoneboo
         //PhoneNumberVO phoneNumberVO = mData.get(position);
         holder.tv_name.setText(mData.get(position).getName());
         holder.tv_phone.setText(mData.get(position).getPhone());
+        holder.tv_position.setText(mData.get(position).getPosition());
+        // holder.tv_company.setText(mData.get(position).getCompany());
         //holder.img.setImageResource(mData.get(position).getPhoto());
     }
 
@@ -185,14 +205,23 @@ public class RVAdapter_phonebook extends RecyclerView.Adapter<RVAdapter_phoneboo
         private ImageView item_call;
         private TextView tv_name;
         private TextView tv_phone;
+        private TextView tv_company;
+        private TextView tv_position;
+        private TextView tv_email;
+
         private ImageView img;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             item_contact = itemView.findViewById(R.id.contact_item_id);
             item_call = itemView.findViewById(R.id.call_img);
             tv_name = itemView.findViewById(R.id.name_contact);
             tv_phone = itemView.findViewById(R.id.phone_contact);
+            //tv_company = itemView.findViewById(R.id.company_contact);
+            tv_position = itemView.findViewById(R.id.position_contact);
+            // tv_email = itemView.findViewById(R.id.email_contact);
             img = itemView.findViewById(R.id.img_contact);
         }
     }
+
 }

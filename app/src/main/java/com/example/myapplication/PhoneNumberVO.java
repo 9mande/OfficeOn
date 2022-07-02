@@ -3,15 +3,21 @@ package com.example.myapplication;
 public class PhoneNumberVO {
     private String name;
     private String phone;
+    private String company;
+    private String position;
+    private String email;
     private int photo;
-    public PhoneNumberVO() {}
-    public PhoneNumberVO(String names, String phones) {
-        name = names;
-        phone = phones;
+
+    public PhoneNumberVO(String names, String phones, String companys, String positions, String emails) {
+        this.name = names;
+        this.phone = phones;
+        this.company = companys;
+        this.position = positions;
+        this.email = emails;
     }
 
     public String getName(){
-        return name;
+        return this.name;
     }
 
     public void setName(String names){
@@ -19,27 +25,44 @@ public class PhoneNumberVO {
     }
 
     public String getPhone(){
-        return phone;
+        return this.phone;
     }
 
     public void setPhone(String phones){
         this.phone = phones;
     }
 
-    public int getPhoto(){
-        return photo;
+    public String getCompany(){
+        return this.company;
     }
 
-    public void setPhoto(int photos){
-        this.photo = photos;
+    public void setCompany(String companys) {this.company = companys;}
+
+    public String getPosition() {return this.position;}
+
+    public void setPosition(String positions) {this.position = positions;}
+
+    public String getEmil(){return this.email;}
+
+    public void setEmail(String emails) {this.email = emails;}
+
+    public int getPhoto(){
+        return this.photo;
+    }
+
+    public void setPhoto(int photoi){
+        this.photo = photoi;
     }
 
 
     @Override
     public String toString(){
         return "PhoneNumberVO{" +
-                "name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
+                "name='" + this.name + '\'' +
+                ", phone='" + this.phone + '\'' +
+                ", company='" + this.company + '\'' +
+                ", position='" + this.position + '\'' +
+                ", email='" + this.email + '\'' +
                 '}';
     }
 

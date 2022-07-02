@@ -16,24 +16,70 @@
 
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Name"
-            android:paddingLeft="10dp" />
+            android:hint="Name*"
+            android:paddingLeft="10dp"
+            android:textColorHint="#787878"
+            android:textColor="#5B5454"
+            android:backgroundTint = "#787878"/>
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="phone"
+            android:hint="Phone Number*"
+            android:paddingLeft="10dp"
+            android:textColorHint="#787878"
+            android:textColor="#5B5454"
+            android:backgroundTint = "#787878"/>
+
+        <EditText
+            android:id="@+id/editTextCompany"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Phone Number"
-            android:paddingLeft="10dp"/>
+            android:hint="Company Name*"
+            android:paddingLeft="10dp"
+            android:textColorHint="#787878"
+            android:textColor="#5B5454"
+            android:backgroundTint = "#787878"
+            />
+
+        <EditText
+            android:id="@+id/editTextPosition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Position"
+            android:paddingLeft="10dp"
+            android:textColorHint="#787878"
+            android:textColor="#5B5454"
+            android:backgroundTint = "#787878"/>
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Email"
+            android:paddingLeft="10dp"
+            android:textColorHint="#787878"
+            android:textColor="#5B5454"
+            android:backgroundTint = "#787878"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Cancel"
-                android:textColor="#00B0FF"
+                android:textColor="#5B5454"
                 android:backgroundTint="#F3F3F3"/>
 
             <Button
@@ -55,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Ok"
-                android:textColor="#00B0FF"
+                android:textColor="#5B5454"
                 android:backgroundTint="#F3F3F3" />
         </LinearLayout>
 
@@ -73,8 +119,8 @@
         android:layout_marginBottom="15dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="Add Contact"
-        android:textColor="#000000"
+        android:text="Add Phone"
+        android:textColor="#5B5454"
         android:textSize="25dp" />
 
 
