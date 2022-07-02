@@ -130,52 +130,5 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-//        if (requestCode == GALLERY_REQUEST_CODE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-//            Log.d("gallery----------", "진입");
-//            Bitmap bitmap = null;
-//            Uri uri = data.getData();
-//            ImageView dialog_img = (ImageView) findViewById(R.id.dialog_img);
-//            Log.d("gallery-----", ""+(dialog_img==null));
-//            try {
-//                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-//                bitmap = rotateImage(bitmap, 90);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            dialog_img.setImageBitmap(bitmap);
-//            dialog_img.notifyAll();
-//
-//
-//        }
-//
-//        if (requestCode == GALLERY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-//            try {
-//                data.getData();
-//                Uri uri = data.getData();
-//
-//                Bitmap bitmap = null;
-//
-//                try {
-//                    bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
-//                    bitmap = rotateImage(bitmap, 90);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//
-//                ImageView dialog_img = findViewById(R.id.dialog_img);
-//                dialog_img.setImageBitmap(bitmap);
-//                dialog_img.notifyAll();
-//
-//                Cursor cursor = this.getContentResolver().query(Uri.parse(data.getData().toString()), null, null, null, null);
-//                assert cursor != null;
-//                cursor.moveToFirst();
-//                String mediaPath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA));
-//
-//            } catch (IllegalArgumentException e) {
-//                e.printStackTrace();
-//            }
-//        } else {
-//            Toast.makeText(this, "Fail", Toast.LENGTH_SHORT).show();
-//        }
     }
 }

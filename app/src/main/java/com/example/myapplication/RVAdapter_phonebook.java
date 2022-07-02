@@ -69,24 +69,28 @@ public class RVAdapter_phonebook extends RecyclerView.Adapter<RVAdapter_phoneboo
             public void onClick(View v) {
                 Toast.makeText(mContext, "Text Click"+ String.valueOf(vHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
 
-                TextView dialog_name_tv = mDialog.findViewById(R.id.dialog_name);
-                TextView dialog_phone_tv = mDialog.findViewById(R.id.dialog_phone);
+                TextView dialog_name_tv = mDialog.findViewById(R.id.name_contact);
+                TextView dialog_phone_tv = mDialog.findViewById(R.id.phone_contact);
+                //TextView dialog_company_tv = mDialog.findViewById(R.id.company_contact);
+                TextView dialog_position_tv = mDialog.findViewById(R.id.position_contact);
+                //TextView dialog_email_tv = mDialog.findViewById(R.id.dialog_email);
                 ImageView dialog_img = mDialog.findViewById(R.id.dialog_img);
+
                 dialog_name_tv.setText(mData.get(vHolder.getAdapterPosition()).getName());
                 dialog_phone_tv.setText(mData.get(vHolder.getAdapterPosition()).getPhone());
-
-                mDialog.show();
+                //dialog_company_tv.setText(mData.get(vHolder.getAdapterPosition()).getCompany());
+                dialog_position_tv.setText(mData.get(vHolder.getAdapterPosition()).getPosition());
+                //dialog_email_tv.setText(mData.get(vHolder.getAdapterPosition()).getEmail());
 
                 dialog_img.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v){
                         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-
-                        Activity activity = (Activity) mContext;
-                        activity.startActivityForResult(intent, GALLERY_REQUEST_CODE);
+                        ((Activity) mContext).startActivityForResult(intent, GALLERY_REQUEST_CODE);
                     }
-
                 });
+
+                mDialog.show();
 
                 Button call_btn = (Button) mDialog.findViewById(R.id.dialog_btn_call);
                 Button msg_btn = (Button) mDialog.findViewById(R.id.dialog_btn_message);
@@ -151,11 +155,11 @@ public class RVAdapter_phonebook extends RecyclerView.Adapter<RVAdapter_phoneboo
     //2 onBindViewHolder: 화면에 ViewHolder가 붙을 때마다 호출 (실질적인 데이터 처리 이루어짐)
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        //PhoneNumberVO phoneNumberVO = mData.get(position);
-        holder.tv_name.setText(mData.get(position).getName());
-        holder.tv_phone.setText(mData.get(position).getPhone());
-        holder.tv_position.setText(mData.get(position).getPosition());
-        // holder.tv_company.setText(mData.get(position).getCompany());
+        PhoneNumberVO phoneNumberVO = mData.get(position);
+        holder.tv_name.setText(phoneNumberVO.getName());
+        holder.tv_phone.setText(phoneNumberVO.getPhone());
+        holder.tv_position.setText(phoneNumberVO.getPosition());
+        //holder.tv_company.setText(mData.get(position).getCompany());
         //holder.img.setImageResource(mData.get(position).getPhoto());
     }
 
@@ -219,8 +223,8 @@ public class RVAdapter_phonebook extends RecyclerView.Adapter<RVAdapter_phoneboo
             tv_phone = itemView.findViewById(R.id.phone_contact);
             //tv_company = itemView.findViewById(R.id.company_contact);
             tv_position = itemView.findViewById(R.id.position_contact);
-            // tv_email = itemView.findViewById(R.id.email_contact);
-            img = itemView.findViewById(R.id.img_contact);
+            //tv_email = itemView.findViewById(R.id.email_contact);
+            img = itemView.findViewById(R.id.dialog_img);
         }
     }
 

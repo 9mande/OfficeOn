@@ -42,7 +42,7 @@ public class PhoneNumberVO {
 
     public void setPosition(String positions) {this.position = positions;}
 
-    public String getEmil(){return this.email;}
+    public String getEmail(){return this.email;}
 
     public void setEmail(String emails) {this.email = emails;}
 

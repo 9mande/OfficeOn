@@ -104,10 +104,11 @@ public class fragment_phonebook extends Fragment {
 
         recyclerView = rootView.findViewById(R.id.contact_recyclerview);                                                         // Recycler View
         recyclerView.addItemDecoration(new DividerItemDecoration(rootView.getContext(), DividerItemDecoration.VERTICAL));        // 구분선 추가
-
-        rvAdapter = new RVAdapter_phonebook(getContext(), lstPhonebook);                                                         // phonebook 어댑터
+                rvAdapter = new RVAdapter_phonebook(getContext(), lstPhonebook);                                                         // phonebook 어댑터
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));                                                   // linear layout manager (수직)
         recyclerView.setAdapter(rvAdapter);
+
+
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);                                          // Item Touch Helper : Item 스와이프, 드래그 앤 드롭
         itemTouchHelper.attachToRecyclerView(recyclerView);
@@ -146,7 +147,7 @@ public class fragment_phonebook extends Fragment {
                 Button can_btn = (Button) mDialog.findViewById(R.id.button);
                 Button ok_btn = (Button) mDialog.findViewById(R.id.button2);
 
-                                final EditText nameT = (EditText) mDialog.findViewById(R.id.editTextName);
+                final EditText nameT = (EditText) mDialog.findViewById(R.id.editTextName);
                 final EditText phoneT = (EditText) mDialog.findViewById(R.id.editTextPhone);
                 final EditText companyT = (EditText) mDialog.findViewById(R.id.editTextCompany);
                 final EditText positionT = (EditText) mDialog.findViewById(R.id.editTextPosition);
@@ -253,7 +254,6 @@ public class fragment_phonebook extends Fragment {
             }
         });
 
-
         return rootView;
 
     }
@@ -301,8 +301,10 @@ public class fragment_phonebook extends Fragment {
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
             final int position = viewHolder.getAdapterPosition();
-            lstPhonebook.remove(position);
-            rvAdapter.notifyItemRemoved(position);
+            if(direction==ItemTouchHelper.LEFT){
+                lstPhonebook.remove(position);
+                rvAdapter.notifyItemRemoved(position);
+            }
         }
     };
 
