@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment_3">
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_marginTop="10dp">
 
+        <EditText
+            android:id="@+id/inputToDo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:gravity="start|top"
+            android:hint="할 일을 입력하세요"
+            android:inputType="textMultiLine" />
 
-    <ImageView
-        android:id="@+id/myIm"
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:contentDescription="myimage"
-        android:src="@drawable/face" />
+        <Button
+            android:id="@+id/todo_btn_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/round_button"
+            android:drawableLeft="@drawable/ic_add"
+            android:paddingLeft="8dp" />
 
-</FrameLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="685dp">
+
+    </FrameLayout>
+
+</LinearLayout>

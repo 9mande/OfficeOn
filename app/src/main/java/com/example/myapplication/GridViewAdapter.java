@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -101,7 +103,8 @@ public class GridViewAdapter extends BaseAdapter {
         photo.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-
+                rDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                rDialog.getWindow().setGravity(Gravity.BOTTOM);
                 rDialog.show();
 
                 Button yes_btn = (Button) rDialog.findViewById(R.id.yes_button);

@@ -67,20 +67,20 @@ public class RVAdapter_phonebook extends RecyclerView.Adapter<RVAdapter_phoneboo
         vHolder.item_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Text Click"+ String.valueOf(vHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, "Text Click"+ String.valueOf(vHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
 
-                TextView dialog_name_tv = mDialog.findViewById(R.id.name_contact);
-                TextView dialog_phone_tv = mDialog.findViewById(R.id.phone_contact);
-                //TextView dialog_company_tv = mDialog.findViewById(R.id.company_contact);
-                TextView dialog_position_tv = mDialog.findViewById(R.id.position_contact);
-                //TextView dialog_email_tv = mDialog.findViewById(R.id.dialog_email);
+                TextView dialog_name_tv = mDialog.findViewById(R.id.dialog_name);
+                TextView dialog_phone_tv = mDialog.findViewById(R.id.dialog_phone);
+                TextView dialog_company_tv = mDialog.findViewById(R.id.dialog_company);
+                TextView dialog_position_tv = mDialog.findViewById(R.id.dialog_position);
+                TextView dialog_email_tv = mDialog.findViewById(R.id.dialog_email);
                 ImageView dialog_img = mDialog.findViewById(R.id.dialog_img);
 
                 dialog_name_tv.setText(mData.get(vHolder.getAdapterPosition()).getName());
                 dialog_phone_tv.setText(mData.get(vHolder.getAdapterPosition()).getPhone());
-                //dialog_company_tv.setText(mData.get(vHolder.getAdapterPosition()).getCompany());
+                dialog_company_tv.setText(mData.get(vHolder.getAdapterPosition()).getCompany());
                 dialog_position_tv.setText(mData.get(vHolder.getAdapterPosition()).getPosition());
-                //dialog_email_tv.setText(mData.get(vHolder.getAdapterPosition()).getEmail());
+                dialog_email_tv.setText(mData.get(vHolder.getAdapterPosition()).getEmail());
 
                 dialog_img.setOnClickListener(new View.OnClickListener(){
                     @Override
@@ -94,11 +94,12 @@ public class RVAdapter_phonebook extends RecyclerView.Adapter<RVAdapter_phoneboo
 
                 Button call_btn = (Button) mDialog.findViewById(R.id.dialog_btn_call);
                 Button msg_btn = (Button) mDialog.findViewById(R.id.dialog_btn_message);
+                Button share_btn = (Button) mDialog.findViewById(R.id.dialog_btn_share);
 
                 call_btn.setOnClickListener(new Button.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(mContext, "Call button click", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(mContext, "Call button click", Toast.LENGTH_SHORT).show();
 
                         try {
                             Intent callIntent = new Intent(Intent.ACTION_CALL);
@@ -114,13 +115,32 @@ public class RVAdapter_phonebook extends RecyclerView.Adapter<RVAdapter_phoneboo
                 msg_btn.setOnClickListener(new Button.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(mContext, "Msg button click", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(mContext, "Msg button click", Toast.LENGTH_SHORT).show();
 
                         try {
                             Intent msgIntent = new Intent(Intent.ACTION_VIEW);
                             msgIntent.setData(Uri.parse("sms:" + vHolder.tv_phone.getText().toString()));
                             msgIntent.putExtra("sms_body", "Hello world!");
                             v.getContext().startActivity(msgIntent);
+                        }
+                        catch (ActivityNotFoundException e) {
+                            Log.e("Msg", "Fail to Messaging", e);
+                        }
+                    }
+                });
+
+                share_btn.setOnClickListener(new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(mContext, "Share button click", Toast.LENGTH_SHORT).show();
+
+                        try {
+                            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                            shareIntent.setType("text/plain");
+                            String Text_Message = "이름 : " + vHolder.tv_name.getText().toString() + "\n" + "연락처 : " + vHolder.tv_phone.getText().toString();
+                            shareIntent.putExtra(Intent.EXTRA_TEXT, Text_Message);
+                            Intent Sharing = Intent.createChooser(shareIntent, "공유하기");
+                            v.getContext().startActivity(Sharing);
                         }
                         catch (ActivityNotFoundException e) {
                             Log.e("Msg", "Fail to Messaging", e);
