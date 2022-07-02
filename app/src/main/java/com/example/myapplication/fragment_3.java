@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+// 3번째 프래그먼트 (자유 주제)
 
 public class fragment_3 extends Fragment {
 

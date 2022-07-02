@@ -51,6 +51,8 @@ import java.util.List;
 
 import java.util.ArrayList;
 
+// 2번째 프래그먼트 (명함 갤러리)
+
 public class fragment_gallery extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
