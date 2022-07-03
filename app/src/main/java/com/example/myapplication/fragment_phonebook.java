@@ -104,7 +104,7 @@ public class fragment_phonebook extends Fragment {
 
         recyclerView = rootView.findViewById(R.id.contact_recyclerview);                                                         // Recycler View
         recyclerView.addItemDecoration(new DividerItemDecoration(rootView.getContext(), DividerItemDecoration.VERTICAL));        // 구분선 추가
-                rvAdapter = new RVAdapter_phonebook(getContext(), lstPhonebook);                                                         // phonebook 어댑터
+        rvAdapter = new RVAdapter_phonebook(getContext(), lstPhonebook);                                                         // phonebook 어댑터
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));                                                   // linear layout manager (수직)
         recyclerView.setAdapter(rvAdapter);
 

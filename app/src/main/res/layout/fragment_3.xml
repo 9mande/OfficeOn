@@ -16,7 +16,7 @@
         android:layout_marginTop="10dp">
 
         <EditText
-            android:id="@+id/inputToDo"
+            android:id="@+id/input_todo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -25,6 +25,7 @@
             android:layout_marginRight="10dp"
             android:gravity="start|top"
             android:hint="할 일을 입력하세요"
+            android:textColorHint="#787878"
             android:inputType="textMultiLine" />
 
         <Button
@@ -42,6 +43,14 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="685dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/todo_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
 
     </FrameLayout>
 

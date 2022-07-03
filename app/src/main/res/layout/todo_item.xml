@@ -20,7 +20,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/layoutTodo"
+            android:id="@+id/layout_todo"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:gravity="top"
@@ -29,7 +29,7 @@
             android:paddingBottom="10dp">
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/checked_todo"
                 android:layout_width="match_parent"
                 android:checked="true"
                 android:button="@android:color/transparent"
@@ -37,8 +37,20 @@
                 android:layout_height="30dp"
                 android:layout_weight="1" />
 
+            <EditText
+                android:id="@+id/content_todo"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="#787878"
+                android:autofillHints="TODO"
+                android:textColorHint="#4B4545"
+
+                >
+
+            </EditText>
+
             <Button
-                android:id="@+id/deleteButton"
+                android:id="@+id/delete_todo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="20dp"
