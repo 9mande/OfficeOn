@@ -5,7 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:id="@+id/today_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#9E9E9E"
+        android:textSize="8pt"
+        />
+
+    <TextView
+        android:id="@+id/today_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Today"
+        android:layout_marginLeft="20dp"
+        android:textColor="#1A1A1A"
+        android:textSize="14pt"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,8 +46,11 @@
             android:layout_marginRight="10dp"
             android:gravity="start|top"
             android:hint="할 일을 입력하세요"
-            android:textColorHint="#787878"
-            android:inputType="textMultiLine" />
+            android:textColor="#787878"
+            android:textColorHint="#9E9E9E"
+            android:backgroundTint="#9E9E9E"
+            android:inputType="textMultiLine"
+            />
 
         <Button
             android:id="@+id/todo_btn_add"
@@ -42,13 +66,12 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="685dp">
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/todo_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
         </androidx.recyclerview.widget.RecyclerView>
 

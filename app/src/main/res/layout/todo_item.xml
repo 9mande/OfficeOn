@@ -10,7 +10,7 @@
     android:paddingRight="4dp"
     android:paddingBottom="4dp"
     app:cardBackgroundColor="#F5F5F5"
-    app:cardElevation="5dp"
+    app:cardElevation="0dp"
     android:clipChildren="false"
     android:clipToPadding="false">
 
@@ -30,12 +30,12 @@
 
             <CheckBox
                 android:id="@+id/checked_todo"
-                android:layout_width="30dp"
                 android:checked="true"
+                android:layout_marginLeft="20dp"
                 android:button="@android:color/transparent"
                 android:background="@drawable/todo_checkbox"
-                android:layout_height="30dp"
-                 />
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
 
             <EditText
                 android:id="@+id/content_todo"
@@ -45,27 +45,24 @@
                 android:autofillHints="TODO"
                 android:textColorHint="#4B4545"
                 android:layout_weight="5"
-                >
+                android:textColor="#5B5454"
+                android:layout_marginLeft="10dp"
+                android:enabled="false">
 
             </EditText>
 
             <Button
                 android:id="@+id/delete_todo"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/round_button"
                 android:drawableLeft="@drawable/ic_close"
-                android:paddingLeft="8dp" />
+                android:paddingLeft="8dp"
+                android:backgroundTint="#00FF0000"
+                android:background="#00FF0000"/>
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#787878" />
 
     </LinearLayout>
-
-
 </androidx.cardview.widget.CardView>

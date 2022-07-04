@@ -10,19 +10,34 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Date;
+
+import java.text.SimpleDateFormat;
 
 // 3번째 프래그먼트 (자유 주제)
 
 public class fragment_3 extends Fragment {
+
+    private SimpleDateFormat sdf = new SimpleDateFormat("MM dd, yyyy");
+    private Date date = new Date(System.currentTimeMillis());
+
+
+    private TextView tv_date;
+
+    private String time = (String) sdf.format(date);
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,7 +73,6 @@ public class fragment_3 extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
@@ -73,6 +87,10 @@ public class fragment_3 extends Fragment {
         rvAdapter = new RVAdapter(getContext(), lstTodo);                                                                               // 어댑터
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));                                                   // linear layout manager (수직)
         recyclerView.setAdapter(rvAdapter);
+
+        tv_date = (TextView) rootView.findViewById(R.id.today_date);
+        tv_date.setText(time);
+
 
         EditText input_todo = rootView.findViewById(R.id.input_todo);
         input_todo.addTextChangedListener(new TextWatcher() {
