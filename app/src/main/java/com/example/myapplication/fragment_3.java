@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import static java.lang.Integer.parseInt;
+
 import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
@@ -31,13 +33,10 @@ import java.text.SimpleDateFormat;
 
 public class fragment_3 extends Fragment {
 
-    private SimpleDateFormat sdf = new SimpleDateFormat("MM dd, yyyy");
-    private Date date = new Date(System.currentTimeMillis());
+    private SimpleDateFormat sdf;
+    private Date date;
+    private static final String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
-
-    private TextView tv_date;
-
-    private String time = (String) sdf.format(date);
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -88,8 +87,15 @@ public class fragment_3 extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));                                                   // linear layout manager (수직)
         recyclerView.setAdapter(rvAdapter);
 
-        tv_date = (TextView) rootView.findViewById(R.id.today_date);
-        tv_date.setText(time);
+        sdf = new SimpleDateFormat("MM dd, yyyy");
+        date = new Date(System.currentTimeMillis());
+        String date_string = (String) sdf.format(date);
+        String[] date_arr = date_string.split(" ");
+        int month = parseInt(date_arr[0]);
+        date_arr[0] = months[month-1];
+
+        TextView tv_date = (TextView) rootView.findViewById(R.id.today_date);
+        tv_date.setText(String.join(" ", date_arr));
 
 
         EditText input_todo = rootView.findViewById(R.id.input_todo);

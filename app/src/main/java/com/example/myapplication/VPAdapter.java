@@ -23,10 +23,12 @@ public class VPAdapter extends FragmentPagerAdapter {
         items.add(new fragment_phonebook());
         items.add(new fragment_gallery());
         items.add(new fragment_3());
+        items.add(new fragment_look());
 
         itext.add("연락처");
         itext.add("명함");
         itext.add("TODO");
+        itext.add("LOOK");
     }
 
     @Override
