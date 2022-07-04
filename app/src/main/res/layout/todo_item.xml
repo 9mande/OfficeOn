@@ -30,21 +30,21 @@
 
             <CheckBox
                 android:id="@+id/checked_todo"
-                android:layout_width="match_parent"
+                android:layout_width="30dp"
                 android:checked="true"
                 android:button="@android:color/transparent"
                 android:background="@drawable/todo_checkbox"
                 android:layout_height="30dp"
-                android:layout_weight="1" />
+                 />
 
             <EditText
                 android:id="@+id/content_todo"
-                android:layout_width="300dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="#787878"
                 android:autofillHints="TODO"
                 android:textColorHint="#4B4545"
-
+                android:layout_weight="5"
                 >
 
             </EditText>
