@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 평상시 -->
+    <item>
+        <shape>
+            <!-- 배경 -->
+            <solid android:color="#CACACA" />
+            <corners
+                android:bottomLeftRadius="0dp"
+                android:bottomRightRadius="0dp"
+                android:topLeftRadius="500dp"
+                android:topRightRadius="500dp" />
+        </shape>
+    </item>
+</selector>
