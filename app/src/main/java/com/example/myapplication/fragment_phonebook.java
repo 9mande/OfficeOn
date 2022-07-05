@@ -109,7 +109,6 @@ public class fragment_phonebook extends Fragment {
         recyclerView.setAdapter(rvAdapter);
 
 
-
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);                                          // Item Touch Helper : Item 스와이프, 드래그 앤 드롭
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
@@ -118,6 +117,7 @@ public class fragment_phonebook extends Fragment {
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));                                         // 배경 투명하게
 
         EditText editText = rootView.findViewById(R.id.searchPhonebook);                                                         // 연락처 검색 기능
+
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
