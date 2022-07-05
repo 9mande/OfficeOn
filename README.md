@@ -34,6 +34,8 @@
 - 전화 모양을 클릭하면 바로 전화를 걸 수 있습니다.
 - 서치바를 사용하여 연락처를 쉽게 찾을 수 있습니다. (이름, 전화번호로 검색 가능)
 
+![gif_poto1](https://user-images.githubusercontent.com/92452192/177326040-8fa8900c-d892-46c5-8f29-401c78717fc3.gif)
+![gif_poto2](https://user-images.githubusercontent.com/92452192/177326114-23d0fa59-5b61-42f3-925e-3c38b2d93375.gif)
 
 ## Tap2 명함집
 - JSON 파일에 있는 정보를 불러와 Recycler Veiw를 사용해 화면에 표시 합니다.
