@@ -12,9 +12,10 @@
 
 # 어플리케이션 소개 
 
-<img src="">
-<img src="">
-<img src="">
+<img src="![git_home2](https://user-images.githubusercontent.com/92452192/177323213-09a065a9-8be7-4cf8-9b87-097c7303a0dc.gif))">
+<img src="![git_home1](https://user-images.githubusercontent.com/92452192/177323223-6a7c0e98-9169-4e9d-9851-3ab326d9af0c.gif)">
+<img src="![gif_home3](https://user-images.githubusercontent.com/92452192/177323338-dbbdd481-a404-421a-875c-d4c687640f07.gif">
+
 ## Home 화면
 - tap을 모두 제작한 후 이들을 하나로 묶기 위해서 제작하였습니다.
 - 각 tap으로 넘어가는 기능 및 개인 프로필, 타이머, 날씨를 확인할 수 있습니다. 
