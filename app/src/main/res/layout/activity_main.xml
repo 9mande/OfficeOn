@@ -9,11 +9,12 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/maintab"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:layout_height="5dp"
+        android:background="#F5F5F5"
+        app:tabIndicatorHeight="3dp"
         app:tabTextColor="#787878"
-        app:tabSelectedTextColor="#5B5454"
         app:tabIndicatorColor="#787878"
+        app:tabIndicatorFullWidth="false"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/viewpager" >
@@ -27,7 +28,7 @@
             android:id="@+id/tab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="연락처"
+            android:text=" "
 
             />
 
@@ -35,19 +36,19 @@
             android:id="@+id/tab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="명함" />
+            android:text=" " />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TODO" />
+            android:text=" " />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOOK" />
+            android:text=" " />
 
     </com.google.android.material.tabs.TabLayout>
 

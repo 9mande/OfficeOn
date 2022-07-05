@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="7월 4일 날씨"
             android:textColor="#9E9E9E"
             android:textSize="8pt" />
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                android:layout_marginRight="150dp"
+                android:layout_marginRight="140dp"
                 android:gravity="right"
                 android:text="18℃"
                 android:textColor="#1A1A1A"
@@ -62,7 +62,7 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Office Look"
         android:textColor="#1a1a1a"
@@ -73,7 +73,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="230dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
         android:text="today's outfit"
@@ -83,13 +82,12 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="290dp"
-        android:layout_marginBottom="90dp">
+        android:layout_marginTop="10dp">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/item1"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="350dp"
             android:layout_gravity="center"
             android:background="@drawable/round_half"
             android:backgroundTint="#CACACA" />
@@ -97,23 +95,18 @@
         <ImageView
             android:id="@+id/look_office"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/f_s1" />
 
     </FrameLayout>
 
     <Button
-        android:id="@+id/another"
+        android:id="@+id/look_another"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/round_button"
         android:backgroundTint="#EEEEEE"
         android:clickable="true"
@@ -122,34 +115,4 @@
         android:textAllCaps="false"
         android:textColor="#787878"
         android:textSize="19dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/cam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="13dp"
-        android:clickable="true"
-        android:backgroundTint="#ffffff"
-        android:elevation="0dp"
-        app:borderWidth="0dp"
-        app:rippleColor="#5B5454"
-        app:srcCompat="@drawable/camera" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="90dp"
-        android:backgroundTint="#ffffff"
-        android:clickable="true"
-        app:borderWidth="0dp"
-        app:rippleColor="#5B5454"
-        app:srcCompat="@drawable/album" />
-
-</RelativeLayout>
+</LinearLayout>

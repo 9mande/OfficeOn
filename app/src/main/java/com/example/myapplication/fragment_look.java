@@ -6,9 +6,11 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +18,10 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,8 +50,10 @@ public class fragment_look extends Fragment {
 
     private static final String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     private static final String[] weathers = {"맑음", "비", "구름", "흐림"};
+    private ArrayList<ArrayList<Integer>> clothes = new ArrayList<ArrayList<Integer>>();
     private String weather;
     private int temperature;
+    private int season;
 
     public fragment_look() {
         // Required empty public constructor
@@ -101,6 +108,8 @@ public class fragment_look extends Fragment {
             }
         };
         weatherThread.start();
+        // Weather Thread 진행 동안 Cloth 불러옴
+
         try{
             weatherThread.join();
             update(rootView);
@@ -121,6 +130,77 @@ public class fragment_look extends Fragment {
         if (!(look_weather == null && look_temperature == null && look_when == null)){
             update(rootView);
         }
+
+        Button look_another = rootView.findViewById(R.id.look_another);
+        ImageView look_office = rootView.findViewById(R.id.look_office);
+
+
+        ArrayList<Integer> tmp0 = new ArrayList<Integer>();
+
+        tmp0.add(R.drawable.f_sp1);
+        tmp0.add(R.drawable.f_sp2);
+        tmp0.add(R.drawable.f_sp3);
+        tmp0.add(R.drawable.f_sp4);
+        tmp0.add(R.drawable.m_sp1);
+        tmp0.add(R.drawable.m_sp2);
+        tmp0.add(R.drawable.m_sp3);
+        tmp0.add(R.drawable.m_sp4);
+        clothes.add(tmp0);
+
+        ArrayList<Integer> tmp1 = new ArrayList<Integer>();
+        tmp1.add(R.drawable.f_s1);
+        tmp1.add(R.drawable.f_s2);
+        tmp1.add(R.drawable.f_s3);
+        tmp1.add(R.drawable.f_s4);
+        tmp1.add(R.drawable.m_s1);
+        tmp1.add(R.drawable.m_s2);
+        tmp1.add(R.drawable.m_s3);
+        tmp1.add(R.drawable.m_s4);
+        clothes.add(tmp1);
+
+        ArrayList<Integer> tmp2 = new ArrayList<Integer>();
+        tmp2.add(R.drawable.f_f1);
+        tmp2.add(R.drawable.f_f2);
+        tmp2.add(R.drawable.f_f3);
+        tmp2.add(R.drawable.f_f4);
+        tmp2.add(R.drawable.m_f1);
+        tmp2.add(R.drawable.m_f2);
+        tmp2.add(R.drawable.m_f3);
+        tmp2.add(R.drawable.m_f4);
+        clothes.add(tmp2);
+
+        ArrayList<Integer> tmp3 = new ArrayList<Integer>();
+        tmp3.add(R.drawable.f_w1);
+        tmp3.add(R.drawable.f_w2);
+        tmp3.add(R.drawable.f_w3);
+        tmp3.add(R.drawable.f_w4);
+        tmp3.add(R.drawable.m_w1);
+        tmp3.add(R.drawable.m_w2);
+        tmp3.add(R.drawable.m_w3);
+        tmp3.add(R.drawable.m_w4);
+        clothes.add(tmp3);
+        tmp3.clear();
+
+        Log.d("asdf", clothes.toString());
+
+        Random i = new Random();
+
+        look_another.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if (temperature >= 23){
+                    season = 1;
+                } else if (temperature >= 17){
+                    season = 0;
+                } else if (temperature >= 9){
+                    season = 2;
+                } else{
+                    season = 3;
+                }
+
+                look_office.setImageResource(clothes.get(season).get(i.nextInt(clothes.get(season).size())));
+            }
+        });
 
         return rootView;
     }
