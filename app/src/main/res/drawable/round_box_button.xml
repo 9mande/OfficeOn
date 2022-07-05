@@ -19,10 +19,10 @@
             <!-- 배경 -->
             <solid android:color="#787878" />
             <corners
-                android:bottomLeftRadius="100dp"
-                android:bottomRightRadius="100dp"
-                android:topLeftRadius="100dp"
-                android:topRightRadius="100dp" />
+                android:bottomLeftRadius="15dp"
+                android:bottomRightRadius="15dp"
+                android:topLeftRadius="15dp"
+                android:topRightRadius="15dp" />
         </shape>
     </item>
 </selector>

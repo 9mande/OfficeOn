@@ -21,22 +21,23 @@
         android:orientation="horizontal"
         android:layout_alignParentTop="@+id/contact_recyclerview"
         android:background="#F5F5F5"
-        android:translationZ="90dp"
+        android:elevation="90dp"
         android:outlineProvider="none" >
 
         <ImageView
             android:id="@+id/imageSearch"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_search"
             app:tint="#787878"
-            app:srcCompat="@android:drawable/ic_menu_search" />
+             />
 
         <EditText
             android:id="@+id/searchPhonebook"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="11"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="Search Phonebook"

@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:background="#F5F5F5">
 
     <TextView
@@ -66,7 +68,8 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/todo_container"

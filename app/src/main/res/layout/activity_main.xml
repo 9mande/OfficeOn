@@ -5,19 +5,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F5F5F5">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:gravity="bottom"
         android:orientation="horizontal"
         android:layout_marginTop="10dp">
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/tv1"
                 android:layout_width="wrap_content"
@@ -25,11 +23,20 @@
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="50dp"
                 android:text="Office On"
                 android:textColor="#1a1a1a"
-                android:textSize="10pt" />
-
+                android:textSize="12pt" />
+            <TextView
+                android:id="@+id/tv62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:text="Welcome to our Office"
+                android:textColor="#787878"
+                android:textSize="7pt" />
             <TextView
                 android:id="@+id/tv2"
                 android:layout_width="wrap_content"
@@ -42,26 +49,20 @@
                 android:layout_marginBottom="15dp"
                 android:textColor="#1a1a1a"
                 android:textSize="6pt" />
-
         </LinearLayout>
-
-
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:gravity="right"
-            android:layout_marginLeft="150dp"
-            app:srcCompat="@drawable/github_wh" />
+            android:layout_marginLeft="90dp"
 
+            android:src="@drawable/github_wh" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="horizontal" >
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,7 +70,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-
             <Button
                 android:id="@+id/home_button_phonebook"
                 android:layout_width="60dp"
@@ -77,7 +77,6 @@
                 android:background="@drawable/round_box_button"
                 android:drawableLeft="@drawable/ic_phone"
                 android:paddingLeft="18dp" />
-
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
@@ -95,7 +94,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-
             <Button
                 android:id="@+id/home_button_gallery"
                 android:layout_width="60dp"
@@ -103,7 +101,6 @@
                 android:background="@drawable/round_box_button"
                 android:drawableLeft="@drawable/ic_card"
                 android:paddingLeft="18dp" />
-
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
@@ -114,14 +111,12 @@
                 android:textColor="#787878"
                 android:textSize="12dp" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <Button
                 android:id="@+id/home_button_todo"
                 android:layout_width="60dp"
@@ -129,7 +124,6 @@
                 android:background="@drawable/round_box_button"
                 android:drawableLeft="@drawable/ic_todo"
                 android:paddingLeft="18dp" /> />
-
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
@@ -140,14 +134,12 @@
                 android:textColor="#787878"
                 android:textSize="12dp" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <Button
                 android:id="@+id/home_button_look"
                 android:layout_width="60dp"
@@ -155,7 +147,6 @@
                 android:background="@drawable/round_box_button"
                 android:drawableLeft="@drawable/ic_style"
                 android:paddingLeft="18dp" /> />
-
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
@@ -165,83 +156,192 @@
                 android:text="style"
                 android:textColor="#787878"
                 android:textSize="12dp" />
-
         </LinearLayout>
-
     </LinearLayout>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/round_box_button"
-        android:backgroundTint="#ffffff"
-        android:layout_margin="20dp">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_alignParentLeft="true"
-            app:srcCompat="@drawable/github_wh" />
-
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
+            <LinearLayout
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="김몰입"
-                android:textColor="#1a1a1a"
-                android:textSize="10pt" />
-
-            <TextView
-                android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="카이스트"
-                android:textColor="#9E9E9E"
-                android:textSize="7pt" />
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv3"
-                    android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/round_box_button"
+                android:backgroundTint="#ffffff"
+                android:layout_margin="20dp">
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentLeft="true"
+                    app:srcCompat="@drawable/github_wh" />
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="마케팅팀"
-                    android:textColor="#9E9E9E"
-                    android:textSize="7pt" />
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="김몰입"
+                        android:textColor="#1a1a1a"
+                        android:textSize="10pt" />
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="카이스트"
+                        android:textColor="#9E9E9E"
+                        android:textSize="7pt" />
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="마케팅팀"
+                            android:textColor="#9E9E9E"
+                            android:textSize="7pt" />
+                        <TextView
+                            android:id="@+id/tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="80dp"
+                            android:text="대리"
+                            android:textColor="#9E9E9E"
+                            android:textSize="7pt" />
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/tv5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="010-6232-7945"
+                        android:textColor="#9E9E9E"
+                        android:textSize="7pt" />
+                </LinearLayout>
+            </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tv4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="80dp"
-                    android:text="대리"
-                    android:textColor="#9E9E9E"
-                    android:textSize="7pt" />
 
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/tv5"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="010-6232-7945"
-                android:textColor="#9E9E9E"
-                android:textSize="7pt" />
+                android:orientation="vertical"
+                android:background="@drawable/round_box_button"
+                android:backgroundTint="#ffffff"
+                android:layout_margin="20dp">
 
+                <TextView
+                    android:id="@+id/tv6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="퇴근시간"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#1a1a1a"
+                    android:textSize="6.8pt" />
+
+                <TextView
+                    android:id="@+id/tv7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2:40:35"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#5b5454"
+                    android:textSize="20pt" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="일시정지"
+                        android:textSize="13dp"
+                        android:textColor="#787878"
+                        style="?android:attr/borderlessButtonStyle"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="12dp"
+                        android:background="#787878"/>
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="취소"
+                        android:textSize="13dp"
+                        android:textColor="#787878"
+                        style="?android:attr/borderlessButtonStyle"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/round_box_button"
+                android:backgroundTint="#ffffff"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:id="@+id/look_when"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="7월 4일 날씨"
+                    android:textColor="#1a1a1a"
+                    android:textSize="6.8pt" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/look_weather"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_marginRight="80dp"
+                        app:srcCompat="@drawable/sun" />
+
+                    <TextView
+                        android:id="@+id/look_temperature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginRight="120dp"
+                        android:gravity="right"
+                        android:text="18℃"
+                        android:textColor="#5b5454"
+                        android:textSize="16pt"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/look_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="대전광역시 유성구 과학로"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="#9E9E9E"
+                    android:textSize="6pt" />
+            </LinearLayout>
         </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

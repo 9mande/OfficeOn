@@ -9,16 +9,26 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+
+import org.json.JSONException;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     int nCurrentPermission = 0;
@@ -30,11 +40,92 @@ public class MainActivity extends AppCompatActivity {
     private FragmentTransaction ft;
     RVAdapter adapter;
 
+    private SimpleDateFormat sdf, sdf2;
+    private Date date;
+
+    private String weather;
+    private int temperature;
+
+    private static final String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    private static final String[] weathers = {"맑음", "비", "구름", "흐림"};
+
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        ImageView imageView = findViewById(R.id.imageView);
+        imageView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                    case MotionEvent.ACTION_MOVE:
+                        imageView.setImageResource(R.drawable.clicked_cat);
+                        return true;
+                    case MotionEvent.ACTION_UP:
+                        imageView.setImageResource(R.drawable.github_wh);
+                        break;
+                }
+                return false;
+            }
+        });
+
+
+        sdf = new SimpleDateFormat("yyyyMMdd HHmm");
+        date = new Date(System.currentTimeMillis());
+        String date_string = (String) sdf.format(date);
+        String dates = date_string.split(" ")[0];
+        String times = date_string.split(" ")[1];
+        times = times.substring(0, 2) + "00";
+
+        TextView look_when = findViewById(R.id.look_when);
+        TextView look_temperature = findViewById(R.id.look_temperature);
+        ImageView look_weather = findViewById(R.id.look_weather);
+
+        sdf2 = new SimpleDateFormat("MM월 dd일 날씨");
+        look_when.setText((String)sdf2.format(date));
+
+        WeatherData weatherData = new WeatherData("67", "101", dates, times);
+        Thread weatherThread = new Thread(){
+            public void run(){
+                int tmp = 0;
+                try {
+                    tmp = weatherData.getWeather();
+                } catch (IOException | JSONException e) {
+                    e.printStackTrace();
+                }
+                weather = weathers[tmp/100 - 1];
+                temperature = tmp%100;
+            }
+        };
+        weatherThread.start();
+// Weather Thread 진행 동안 Cloth 불러옴
+
+        try{
+            weatherThread.join();
+
+            if (weather == "맑음") {
+                look_weather.setImageResource(R.drawable.sun);
+
+            }else if (weather == "비") {
+                look_weather.setImageResource(R.drawable.rain);
+
+            }else if (weather == "구름") {
+                look_weather.setImageResource(R.drawable.cloud);
+
+            }else if (weather == "흐림") {
+                look_weather.setImageResource(R.drawable.sun_cloud);
+            }
+
+            look_temperature.setText(temperature + "℃");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
 
         Button home_button_phonebook = findViewById(R.id.home_button_phonebook);
         Button home_button_gallery = findViewById(R.id.home_button_gallery);

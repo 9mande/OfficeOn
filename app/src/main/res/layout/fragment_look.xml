@@ -111,7 +111,7 @@
         android:backgroundTint="#EEEEEE"
         android:clickable="true"
         android:gravity="center"
-        android:text="another"
+        android:text="stylist"
         android:textAllCaps="false"
         android:textColor="#787878"
         android:textSize="19dp" />

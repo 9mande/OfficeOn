@@ -227,9 +227,6 @@ public class fragment_look extends Fragment {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
     }
 
 }
