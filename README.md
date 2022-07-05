@@ -22,6 +22,10 @@
 - 시간 관계상 타이머를 기능은 추가하지 못하였고, xml 디자인만 들어가 있습니다.
 - 귀여운 고양이에 이스터 에그를 숨겨두었습니다:)
 
+![gif_phone1](https://user-images.githubusercontent.com/92452192/177324534-91521ad9-bce9-4ff6-a901-2847acb2d581.gif)
+![gif_phone3](https://user-images.githubusercontent.com/92452192/177324542-89a63f74-84ad-4a41-988a-cd9fa69caefb.gif)
+![gif_phone2](https://user-images.githubusercontent.com/92452192/177324548-14b3223a-9229-4504-b1d3-d5dced7edd8d.gif)
+
 ## Tap1 연락처
 - JSON 파일에 있는 정보를 불러와 Recycler Veiw를 사용해 화면에 표시 합니다.
 - 전화번호부 플로팅 베너를 클릭하면 핸드폰 내부 저장소에 접근하여 이름 및 전화번호를 불러올 수 있습니다.
