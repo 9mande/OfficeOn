@@ -1,73 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="#F5F5F5">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/maintab"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="#F5F5F5"
-        app:tabIndicatorHeight="3dp"
-        app:tabTextColor="#787878"
-        app:tabIndicatorColor="#787878"
-        app:tabIndicatorFullWidth="false"
+        android:layout_height="120dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/viewpager" >
-
-        <!--
-        app:layout_constraintTop_toBottomOf="@+id/viewpager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        -->
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab1"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" "
+            android:orientation="vertical">
 
-            />
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="80dp"
+                android:text="Office On"
+                android:textColor="#1a1a1a"
+                android:textSize="10pt" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab2"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="80dp"
+                android:text="welcome to our office"
+                android:layout_marginBottom="15dp"
+                android:textColor="#1a1a1a"
+                android:textSize="6pt" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:gravity="right"
+            android:layout_marginLeft="150dp"
+            app:srcCompat="@drawable/github_wh" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/home_button_phonebook"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/round_box_button"
+                android:drawableLeft="@drawable/ic_phone"
+                android:paddingLeft="18dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="#787878"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:text="phone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/home_button_gallery"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/round_box_button"
+                android:drawableLeft="@drawable/ic_card"
+                android:paddingLeft="18dp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="card"
+                android:textColor="#787878"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/home_button_todo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/round_box_button"
+                android:drawableLeft="@drawable/ic_todo"
+                android:paddingLeft="18dp" /> />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="to-do"
+                android:textColor="#787878"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/home_button_look"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/round_box_button"
+                android:drawableLeft="@drawable/ic_style"
+                android:paddingLeft="18dp" /> />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="style"
+                android:textColor="#787878"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/round_box_button"
+        android:backgroundTint="#ffffff"
+        android:layout_margin="20dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            app:srcCompat="@drawable/github_wh" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=" " />
+            android:orientation="vertical">
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" " />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="김몰입"
+                android:textColor="#1a1a1a"
+                android:textSize="10pt" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" " />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="카이스트"
+                android:textColor="#9E9E9E"
+                android:textSize="7pt" />
 
-    </com.google.android.material.tabs.TabLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="마케팅팀"
+                    android:textColor="#9E9E9E"
+                    android:textSize="7pt" />
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/maintab"
-        >
-        <!--
-        app:layout_constraintBottom_toTopOf="@+id/maintab"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        -->
-    </androidx.viewpager.widget.ViewPager>
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="80dp"
+                    android:text="대리"
+                    android:textColor="#9E9E9E"
+                    android:textSize="7pt" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="010-6232-7945"
+                android:textColor="#9E9E9E"
+                android:textSize="7pt" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

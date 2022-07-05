@@ -4,35 +4,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     int nCurrentPermission = 0;
@@ -41,33 +27,56 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private FragmentTransaction ft;
     RVAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-        ViewPager vp = findViewById(R.id.viewpager);
-        VPAdapter adapter = new VPAdapter(getSupportFragmentManager());
-        vp.setAdapter(adapter);
+        Button home_button_phonebook = findViewById(R.id.home_button_phonebook);
+        Button home_button_gallery = findViewById(R.id.home_button_gallery);
+        Button home_button_todo = findViewById(R.id.home_button_todo);
+        Button home_button_look = findViewById(R.id.home_button_look);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.maintab);
-        tabLayout.setupWithViewPager(vp);
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        Bundle bundle = new Bundle(1); // 파라미터는 전달할 데이터 개수
 
+        home_button_phonebook.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                vp.setCurrentItem(tab.getPosition());
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), activity_home.class);
+                intent.putExtra("PAGE_KEY",0);
+                //액티비티 시작!
+                startActivity(intent);
             }
-
+        });
+        home_button_gallery.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), activity_home.class);
+                intent.putExtra("PAGE_KEY",1);
+                //액티비티 시작!
+                startActivity(intent);
             }
+        });
+        home_button_todo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), activity_home.class);
+                intent.putExtra("PAGE_KEY",2);
+                //액티비티 시작!
+                startActivity(intent);
+            }
+        });
+        home_button_look.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), activity_home.class);
+                intent.putExtra("PAGE_KEY",3);
+                //액티비티 시작!
+                startActivity(intent);
             }
         });
 

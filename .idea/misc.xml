@@ -63,14 +63,31 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/layout/todo_item.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication/app/src/main/res/xml/filepaths.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/avd_anim.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/camera.xml" value="0.1955" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/corner_round.xml" value="0.1955" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/ic_close.xml" value="0.1955" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1955" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/ic_main_background.xml" value="0.1955" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/ic_phone.xml" value="0.1955" />
         <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/round_half.xml" value="0.1955" />
         <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/selector.xml" value="0.3585" />
         <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/tabselector.xml" value="0.1945" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/them.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/drawable/todo_checkbox.xml" value="0.1955" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/add_phonebook.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/dialog_phonebook.xml" value="0.15789473684210525" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/dialog_photo.xml" value="0.15789473684210525" />
         <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/fragment_3.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/fragment_gallery.xml" value="0.21504916631038906" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/fragment_look.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/fragment_phonebook.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/gallery_item.xml" value="0.15789473684210525" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/item_phonebook.xml" value="0.15789473684210525" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/recycler_photo.xml" value="0.15789473684210525" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/madcamp1/app/src/main/res/layout/remove_photo.xml" value="0.15789473684210525" />
       </map>
     </option>
   </component>

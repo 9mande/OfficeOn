@@ -103,7 +103,7 @@ public class fragment_look extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                weather = weathers[tmp/100];
+                weather = weathers[tmp/100 - 1];
                 temperature = tmp%100;
             }
         };

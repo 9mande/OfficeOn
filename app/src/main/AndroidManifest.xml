@@ -35,6 +35,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activity_home"></activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.myapplication.provider"
